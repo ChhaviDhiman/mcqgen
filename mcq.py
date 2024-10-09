@@ -62,7 +62,7 @@ def generate_mcqs_gpt(text, num_mcqs, tone):
 
 
 # Streamlit UI
-st.title("MCQs Creator Application with LangChain 🦜⛓️")
+st.title("MCQ Generator from Text/PDF File using GPT-3.5 📄")
 
 # File upload
 uploaded_file = st.file_uploader("Upload a PDF or Text File", type=["pdf", "txt"])
@@ -78,14 +78,14 @@ if uploaded_file is not None:
         st.write(text[:1000])  # Display first 1000 characters of the file to confirm
 
         # Input for number of MCQs
-        num_mcqs = st.number_input("Number of MCQs", min_value=1, max_value=100, value=5)
+        num_mcqs = st.number_input("Number of MCQs", min_value=1, max_value=10, value=5)
 
         # Tone of the quiz
         tone = st.text_input("Tone of the Questions", value="Academic", placeholder="Simple, Academic, Fun, etc.")
         
         # Generate and display MCQs
         if st.button("Generate MCQs"):
-            with st.spinner("Generating MCQs using GPT-4..."):
+            with st.spinner("Generating MCQs using GPT-3.5..."):
                 mcq_output = generate_mcqs_gpt(text, num_mcqs, tone)
                 if mcq_output:
                     st.write("### Generated MCQs:")
