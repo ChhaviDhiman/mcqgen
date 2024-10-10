@@ -2,6 +2,8 @@ import streamlit as st
 import PyPDF2
 import g4f
 
+
+
 # Function to read the uploaded file (PDF or text)
 def read_file(uploaded_file):
     try:

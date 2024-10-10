@@ -135,3 +135,4 @@ Werkzeug==3.0.4
 win32-setctime==1.1.0
 yarl==1.13.1
 zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1726248574750/work
+asttokens>=2.1.0
